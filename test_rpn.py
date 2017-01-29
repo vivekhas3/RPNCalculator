@@ -291,6 +291,7 @@ class TestRPN:
 		expersion='2,3,+,5,*,4,-,%'
 		expected=0.2
 		assert expected == RPNCalculator().evaluate(expersion)
+		raise
 
 
 
