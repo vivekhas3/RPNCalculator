@@ -1,18 +1,18 @@
 from rpn import RPNCalculator
 import pytest
 class TestRPN:
-	
+
 	def test_single_operator_addition(self):
 		expersion='2,3,+'
 		expected=5.0
 		assert expected == RPNCalculator().evaluate(expersion)
-		
-	
+
+
 	def test_single_operator_addition_no_operand(self):
 		expersion='+'
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
-	
+
 	def test_single_operator_addition_one_operand(self):
 		expersion='2,+'
 		expected='Error'
@@ -52,7 +52,7 @@ class TestRPN:
 		expersion=''
 		expected='Please enter some value'
 		assert expected == RPNCalculator().evaluate(expersion)
-	
+
 	def test_only_separator(self):
 		expersion=','
 		expected='Please enter some value'
@@ -77,13 +77,13 @@ class TestRPN:
 		expersion='2,3,-'
 		expected=-1.0
 		assert expected == RPNCalculator().evaluate(expersion)
-		
-	
+
+
 	def test_single_operator_sub_no_operand(self):
 		expersion='-'
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
-	
+
 	def test_single_operator_sub_one_operand(self):
 		expersion='2,-'
 		expected='Error'
@@ -109,7 +109,8 @@ class TestRPN:
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
 
-	def test_multiple_operator_sub_multiple_operand(self):
+
+       def test_multiple_operator_sub_multiple_operand(self):
 		expersion='2,3,-,-'
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
@@ -163,13 +164,13 @@ class TestRPN:
 		expersion='2,3,*'
 		expected=6.0
 		assert expected == RPNCalculator().evaluate(expersion)
-		
-	
+
+
 	def test_single_operator_mul_no_operand(self):
 		expersion='*'
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
-	
+
 	def test_single_operator_mul_one_operand(self):
 		expersion='2,*'
 		expected='Error'
@@ -205,7 +206,7 @@ class TestRPN:
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
 
-	
+
 	def test_multiple_operator_mul_multiple_operand_comma_at_last(self):
 		expersion='2,3,*,*,'
 		expected='Error'
@@ -225,13 +226,13 @@ class TestRPN:
 		expersion='2,3,/'
 		expected=0.7
 		assert expected == RPNCalculator().evaluate(expersion)
-		
-	
+
+
 	def test_single_operator_div_no_operand(self):
 		expersion='/'
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
-	
+
 	def test_single_operator_div_one_operand(self):
 		expersion='2,/'
 		expected='Error'
@@ -267,7 +268,7 @@ class TestRPN:
 		expected='Error'
 		assert expected == RPNCalculator().evaluate(expersion)
 
-	
+
 	def test_divtiple_operator_div_divtiple_operand_comma_at_last(self):
 		expersion='2,3,/,/,'
 		expected='Error'
